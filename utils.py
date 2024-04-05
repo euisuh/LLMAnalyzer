@@ -1,6 +1,7 @@
 from langdetect import detect
 from deep_translator import GoogleTranslator
- 
+import ast
+
 MAX_GOOGLE_TRANSLATE_LEN = 5000
 
 def google_translator(s, source='auto', target='ar'):
@@ -13,3 +14,10 @@ def google_translator(s, source='auto', target='ar'):
     except:
         tr = f"EXCEPTION in GoogleTranslator: {s[0:100]}..."
     return tr
+
+def get_correct_format(text):
+    try:
+        return ast.literal_eval(text)
+    except:
+        return text
+        

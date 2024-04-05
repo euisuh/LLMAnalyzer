@@ -12,7 +12,7 @@ def google_translator(s, source='auto', target='ar'):
         if tr is None:
             tr = s
     except:
-        tr = f"EXCEPTION in GoogleTranslator: {s[0:100]}..."
+        tr = f"EXCEPTION caught by KORQAR"
     return tr
 
 def get_correct_format(text):
